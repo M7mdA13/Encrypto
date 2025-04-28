@@ -10,7 +10,7 @@ function HomePage() {
       <header id="header">
         <h1 className="heading1">Encrypto</h1>
       </header>
-      <container className="toggle">
+      <div className="toggle">
         <button
           className={EncryptOrDecrypt ? "toggled" : "btn"}
           onClick={() => setState(1)}
@@ -23,7 +23,7 @@ function HomePage() {
         >
           Decrypt
         </button>
-      </container>
+      </div>
       <span className="choose">
         Choose your {EncryptOrDecrypt ? "Encryption" : "Decryption"} Algorithm:
       </span>

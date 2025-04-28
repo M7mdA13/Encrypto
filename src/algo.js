@@ -3,6 +3,9 @@
 // Caesar Cipher
 
 export function caesarEncrypt(plaintext, shift) {
+    if(!Number.isInteger(shift)){
+        return "Key must be Integer value..";
+    }
   return plaintext
     .split("")
     .map((char) => {
@@ -133,7 +136,7 @@ export function playfairDecrypt(ciphertext, key) {
 
 async function getKey(key) {
     if (key.length !== 16) {
-      throw new Error("Key must be exactly 16 characters (16 bytes) for AES-128.");
+      return false;
     }
     const enc = new TextEncoder();
     return await crypto.subtle.importKey(
@@ -151,6 +154,9 @@ async function getKey(key) {
   
   export async function aesEncrypt(plaintext, key) {
     const cryptoKey = await getKey(key);
+    if(!cryptoKey){
+        return "KEY MUST BE 16 Ch's (128-bits)..";
+    }
     const iv = generateIV();
     const enc = new TextEncoder();
     const encodedText = enc.encode(plaintext);

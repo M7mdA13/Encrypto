@@ -14,9 +14,9 @@ body {
   align-items: center;
 }
 .heading1 {
-  margin-top: 60px;
+  margin-top: 30px;
   color: #7bc74d;
-  font-size: 4rem;
+  font-size: 3rem;
 }
 .toggle {
   display: inline-block;
@@ -74,12 +74,12 @@ body {
 }
 .algorithm-buttons {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   margin-top: 1rem;
 }
 
 .algorithm-button {
-  font-family: monospace;
+  font-family: 'Courier New', Courier, monospace;
   position: relative;
   padding: 20px;
   font-size: 1.2rem;
@@ -161,7 +161,10 @@ body {
 .submit-button:hover {
   background-color: #66a93b;
 }
-
+.submit-button:active {
+  transform: scale(0.95); 
+  transition: 0.1s;
+}
 .result-textarea {
   background-color: #222831;
   border: 2px solid #7BC74D;
@@ -169,5 +172,96 @@ body {
   font-size: 1rem;
   padding: 1rem;
   resize: vertical;
-  height: 100px;
+  height: 50px;
+  margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  .algorithm-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn, .toggled, .algorithm-button {
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .heading1 {
+    font-size: 2.2rem;
+  }
+
+  .choose, .disc {
+    font-size: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .form-container {
+    padding: 0 1rem;
+  }
+
+  .form-input {
+    width: 100%;
+  }
+
+  .submit-button {
+    width: 100%;
+  }
+
+  .result-textarea {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading1 {
+    font-size: 1.8rem;
+  }
+
+  .choose, .disc {
+    font-size: 1.2rem;
+  }
+
+  .btn, .toggled, .algorithm-button {
+    font-size: 1rem;
+    padding: 15px;
+  }
+}
+@media (max-width: 399px) {
+  .heading1 {
+    font-size: 1.5rem;
+  }
+
+  .choose, .disc {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  .btn, .toggled, .algorithm-button {
+    font-size: 0.9rem;
+    padding: 12px;
+    width: 90%;
+  }
+
+  .algorithm-buttons {
+    gap: 0.5rem;
+  }
+
+  .form-container {
+    padding: 0 0.5rem;
+  }
+
+  .form-input {
+    font-size: 0.9rem;
+  }
+
+  .submit-button {
+    font-size: 1rem;
+    padding: 0.6rem;
+    width: 90%;
+  }
+
+  .result-textarea {
+    font-size: 0.9rem;
+    width: 90%;
+  }
 }
